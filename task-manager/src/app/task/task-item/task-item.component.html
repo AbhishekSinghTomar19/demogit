@@ -1,0 +1,29 @@
+<p>task-item works!</p>
+
+<!-- string interolation -->
+<h1>{{taskName}}</h1>
+
+<!-- property binding -->
+<button [disabled]="isEnabled">property binding</button>
+
+
+<!-- event binding -->
+<button (click)="oninputCahnge()">event bindig</button>
+<input type="text" (input)="onInput($event)">
+
+<!-- two way binding -->
+<input type="text" [(ngModel)] = 'taskName'>
+
+<!-- ngIf -->
+<p *ngIf="taskId%2==0; else notTRue">if directive</p>
+<ng-template #notTRue>not true part</ng-template>
+
+<!-- ngClass -->
+<div [ngClass]="{active:taskId%2==0}"> class directice true</div>
+<div [ngClass]="{inactive:taskId%2!=0}">class directive not true</div>
+
+<!-- ngFor -->
+<div *ngFor="let item of task;let id = index">{{item+" "+ id}}</div>
+
+<!-- ngStyle -->
+<div [ngStyle]="{'color':'blue'}">ngStyele</div>
